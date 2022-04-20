@@ -22,6 +22,14 @@ describe('Employee Reducer', () => {
     expect(state.employees[0]).toEqual(employeeMock);
 
   });
+  it('crear empleado repetido', () => {
+    const state = reducer.employeeReducer(
+
+      {employees: [employeeMock]},
+      actions.createEmployee({employee: employeeMock})
+    );
+    expect(state.employees.length).toEqual(1);
+  });
 
   it('edit empleado', () => {
     const state = reducer.employeeReducer(
@@ -41,4 +49,15 @@ describe('Employee Reducer', () => {
     expect(state).not.toBe(initialStateEmployee);
     expect(state.employees.length).toEqual(0);
   });
+  it('delete empleado de administracion', () => {
+    const copy = {...employeeMock};
+    copy.department = 'administración';
+    const state = reducer.employeeReducer(
+      {employees: [copy]},
+      actions.deleteEmployee({dni: "0t"})
+    );
+    expect(state).not.toBe(initialStateEmployee);
+    expect(state.employees.length).toEqual(1);
+  });
+
 });

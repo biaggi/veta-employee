@@ -5,7 +5,7 @@ export const employeeMock: EmployeeModel = {
   dni: "0t",
   name: "jose",
   email: "test@test.com",
-  department: "administración",
+  department: "contabilidad",
   first_lastname: "ramirez",
   second_lastname: "sanchez",
   birthDate: new Date('01/01/1078'),
