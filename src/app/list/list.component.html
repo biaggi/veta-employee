@@ -2,7 +2,7 @@
     Empleados</h2>
 <ul>
 
-    <li *ngFor="let employee of employees">
+    <li class="employee" *ngFor="let employee of employees">
         <app-edit [employee]="employee"></app-edit>
         <button (click)="onDelete(employee.dni)">delete</button>
     </li>
