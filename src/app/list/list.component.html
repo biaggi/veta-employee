@@ -1,0 +1,15 @@
+<h2>
+    Empleados</h2>
+<ul>
+
+    <li *ngFor="let employee of employees">
+        <div>dni: {{employee.dni}}</div>
+        <div>nombre: {{employee.dni}}</div>
+        <div>primer apellido: {{employee.dni}}</div>
+        <div>segundo apellido: {{employee.dni}}</div>
+        <button (click)="onDelete(employee.dni)">eliminar</button>
+    </li>
+</ul>
+
+Añade un Empleado
+<app-employee></app-employee>

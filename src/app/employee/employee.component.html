@@ -1,0 +1,25 @@
+<h3>Empleado</h3>
+<div class="card" style="width: 18rem;">
+
+    <form [formGroup]="fg" (ngSubmit)="submit()">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <label>dni</label><input type="text" formControlName="dni">
+                <label>nombre</label><input type="text" formControlName="name">
+                <label>primer apellido</label><input type="text" formControlName="dni">
+                <label>segundo apellido</label><input type="text" formControlName="dni">
+                <label>email</label><input type="text" formControlName="dni">
+                <label>fecha de nacimiento</label><input type="date" formControlName="dni">
+                <label>departamento</label>
+                <select formControlName="department">
+                  <option value="administración">administración</option>
+                  <option value="tienda">tienda</option>
+                  <option value="contabilidad">contabilidad</option>
+                </select>
+
+            </li>
+        </ul>
+        <button [disabled]="fg.invalid" type="submit">Crear</button>
+    </form>
+
+</div>

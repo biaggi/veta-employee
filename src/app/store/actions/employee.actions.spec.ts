@@ -1,5 +1,5 @@
 import * as actions from './employee.actions';
-import { employeeMock, editEmployeeMock } from '../model/employee.mocks';
+import { employeeMock, editEmployeeMock } from '../../model/employee.mocks';
 
 describe('employee actions', () => {
   it('can create create user action', () => {

@@ -1,7 +1,7 @@
 import * as reducer from './employee.reducer';
 import * as actions from '../actions/employee.actions';
 import { initialStateEmployee } from './employee.reducer';
-import { employeeMock, editEmployeeMock } from '../model/employee.mocks';
+import { employeeMock, editEmployeeMock } from '../../model/employee.mocks';
 
 
 describe('Employee Reducer', () => {

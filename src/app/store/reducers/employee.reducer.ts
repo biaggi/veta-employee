@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as actions from '../actions';
-import { EmployeeModel } from '../model/employee.model';
+import { EmployeeModel } from '../../model/employee.model';
 
 export interface EmployeeState {
   employees: EmployeeModel[];
