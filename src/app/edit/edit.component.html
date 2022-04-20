@@ -4,11 +4,15 @@
     <form [formGroup]="fg" (ngSubmit)="submit()">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <label>dni</label><input type="text" formControlName="dni">
+                <div>
+                    <label>dni</label>{{employee.dni}}
+                </div>
                 <label>nombre</label><input type="text" formControlName="name">
                 <label>primer apellido</label><input type="text" formControlName="first_lastname">
                 <label>segundo apellido</label><input type="text" formControlName="second_lastname">
-                <label>email</label><input type="text" formControlName="email">
+                <div>
+                    <label>email</label>{{employee.email}}
+                </div>
                 <label>fecha de nacimiento</label><input type="text" formControlName="birthDate">
                 <label>departamento</label>
                 <select formControlName="department">
@@ -19,7 +23,7 @@
 
             </li>
         </ul>
-        <button [disabled]="fg.invalid" type="submit">Crear</button>
+        <button [disabled]="fg.invalid" type="submit">Editar</button>
     </form>
 
 </div>

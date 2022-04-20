@@ -3,11 +3,8 @@
 <ul>
 
     <li *ngFor="let employee of employees">
-        <div>dni: {{employee.dni}}</div>
-        <div>nombre: {{employee.dni}}</div>
-        <div>primer apellido: {{employee.dni}}</div>
-        <div>segundo apellido: {{employee.dni}}</div>
-        <button (click)="onDelete(employee.dni)">eliminar</button>
+        <app-edit [employee]="employee"></app-edit>
+        <button (click)="onDelete(employee.dni)">delete</button>
     </li>
 </ul>
 

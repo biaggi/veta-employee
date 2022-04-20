@@ -12,12 +12,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { appReducers } from './store/store';
 import { EmployeeComponent } from './employee/employee.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

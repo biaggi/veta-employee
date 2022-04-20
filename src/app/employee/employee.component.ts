@@ -21,11 +21,11 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.fg = this.fb.group({
-      dni: new FormControl('1', Validators.required),
-      name: new FormControl('2', Validators.required),
-      first_lastname: new FormControl('3', Validators.required),
-      second_lastname: new FormControl('3', Validators.required),
-      email: new FormControl('4', Validators.required),
+      dni: new FormControl('0t', Validators.required),
+      name: new FormControl('nombre', Validators.required),
+      first_lastname: new FormControl('perez', Validators.required),
+      second_lastname: new FormControl('sanchez', Validators.required),
+      email: new FormControl('a@adsf.com', Validators.required),
       birthDate: new FormControl('01/01/2000', Validators.required),
       department: new FormControl('administración', Validators.required),
     });
