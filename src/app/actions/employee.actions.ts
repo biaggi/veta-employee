@@ -7,7 +7,7 @@ export const createEmployee = createAction(
 );
 export const editEmployee = createAction(
   '[Employees] edit',
-  props<{ employee: EditEmployeeModel }>()
+  props<{ dni: string, employee: EditEmployeeModel }>()
 );
 export const deleteEmployee = createAction(
   '[Employees] delete',

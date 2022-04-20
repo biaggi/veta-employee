@@ -10,10 +10,11 @@ describe('employee actions', () => {
     });
   });
   it('can create  edit action', () => {
-    const action = actions.editEmployee({ employee: editEmployeeMock });
+    const action = actions.editEmployee({ employee: editEmployeeMock, dni: "0t" });
     expect(action).toEqual({
       type: '[Employees] edit',
       employee: editEmployeeMock,
+      dni: "0t"
     });
   });
   it('can create  delete action', () => {
