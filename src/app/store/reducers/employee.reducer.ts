@@ -15,7 +15,7 @@ export const employeeReducer = createReducer(
 
   on(actions.createEmployee, (state, { employee }) => {
     const found = state.employees.find((e) => e.dni == employee.dni);
-    if (found) return state;
+    if (found) return { ...state };
     return {
       ...state,
       employees: [...state.employees, employee],
@@ -35,7 +35,7 @@ export const employeeReducer = createReducer(
     return {
       ...state,
       employees: state.employees.filter((employee) => {
-        return employee.dni != dni || employee.department == 'administración'
+        return employee.dni != dni || employee.department == 'administración';
       }),
     };
   })

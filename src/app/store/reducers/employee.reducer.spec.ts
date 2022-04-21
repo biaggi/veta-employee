@@ -28,6 +28,7 @@ describe('Employee Reducer', () => {
       {employees: [employeeMock]},
       actions.createEmployee({employee: employeeMock})
     );
+    expect(state).not.toBe({employees: [employeeMock]});
     expect(state.employees.length).toEqual(1);
   });
 
@@ -36,7 +37,7 @@ describe('Employee Reducer', () => {
       {employees: [employeeMock]},
       actions.editEmployee({dni: "0t", employee: editEmployeeMock})
     );
-    expect(state).not.toBe(initialStateEmployee);
+    expect(state).not.toBe({employees: [employeeMock]});
     expect(state.employees.length).toEqual(1);
     expect(state.employees[0].first_lastname).toEqual(editEmployeeMock.first_lastname);
   });
@@ -46,7 +47,7 @@ describe('Employee Reducer', () => {
       {employees: [employeeMock]},
       actions.deleteEmployee({dni: "0t"})
     );
-    expect(state).not.toBe(initialStateEmployee);
+    expect(state).not.toBe({employees: [employeeMock]});
     expect(state.employees.length).toEqual(0);
   });
   it('delete empleado de administracion', () => {
@@ -56,7 +57,7 @@ describe('Employee Reducer', () => {
       {employees: [copy]},
       actions.deleteEmployee({dni: "0t"})
     );
-    expect(state).not.toBe(initialStateEmployee);
+    expect(state).not.toBe({employees: [copy]});
     expect(state.employees.length).toEqual(1);
   });
 

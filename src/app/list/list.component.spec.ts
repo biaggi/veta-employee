@@ -28,19 +28,27 @@ describe('ListComponent', () => {
     store.setState(initialStateTest);
 
     spyOn(store, 'dispatch').and.callFake(() => {});
+    spyOn(component, 'onDelete');
     fixture.detectChanges();
   });
-
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
   it('should see a employee', () => {
-    console.log('a', fixture.debugElement.queryAll(By.css('.employee')));
     expect(fixture.debugElement.queryAll(By.css('.employee')).length).toBe(1);
   });
 
+  it('should delete a employee', () => {
+    const button: HTMLButtonElement =
+      fixture.nativeElement.querySelector('button');
+    button.click();
+    expect(component.onDelete).toHaveBeenCalledWith('0t');
 
-
+    store.setState({ employees: { employees: [] } });
+    fixture.detectChanges();
+    console.log(fixture.debugElement.queryAll(By.css('.employee')));
+    expect(fixture.debugElement.queryAll(By.css('.employee')).length).toBe(0);
+  });
 });
