@@ -6,6 +6,9 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { initialState, AppState } from '../store/store';
 import { employeeMock } from '../model/employee.mocks';
 import { By } from '@angular/platform-browser';
+import { EditComponent } from '../edit/edit.component';
+import { EmployeeComponent } from '../employee/employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -18,7 +21,8 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListComponent],
+      declarations: [ListComponent, EditComponent, EmployeeComponent],
+      imports: [ReactiveFormsModule],
       providers: [provideMockStore({ initialState })],
     }).compileComponents();
 
@@ -42,8 +46,10 @@ describe('ListComponent', () => {
 
   it('should delete a employee', () => {
     const button: HTMLButtonElement =
-      fixture.nativeElement.querySelector('button');
+      fixture.nativeElement.querySelector('button.delete');
+      console.log(button);
     button.click();
+    fixture.detectChanges()
     expect(component.onDelete).toHaveBeenCalledWith('0t');
 
     store.setState({ employees: { employees: [] } });

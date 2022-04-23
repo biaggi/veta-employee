@@ -4,7 +4,7 @@
 
     <li class="employee" *ngFor="let employee of employees">
         <app-edit [employee]="employee"></app-edit>
-        <button (click)="onDelete(employee.dni)">delete</button>
+        <button class="delete" (click)="onDelete(employee.dni)">delete</button>
     </li>
 </ul>
 
